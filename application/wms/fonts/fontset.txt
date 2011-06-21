@@ -1,0 +1,2 @@
+label copy0856
+verdana verdana.ttf

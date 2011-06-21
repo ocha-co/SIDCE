@@ -1,0 +1,76 @@
+body{
+    font-family: Arial;
+}
+body, p{
+    margin: 0;
+    font-size: 14px;
+}
+p{
+    padding: 5px 15px;
+}
+/* Login */
+#login_div .login_header{
+    background: url(../img/logo.png) no-repeat;
+    height: 90px;
+    width: 370px;
+    margin: 0 auto 0 auto;
+}
+#login_div {
+    margin: 100px auto 0 auto;
+    width: 400px;
+    font-size: 16px;
+}
+
+#login_div .login_titulo{
+    height: 90px;
+    font-size: 60px;
+    color: #00a100;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#login_div form{
+	margin-left: 8px;
+	padding: 16px 16px 40px 16px;
+	font-weight: normal;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	-moz-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+	-webkit-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+	-khtml-box-shadow: rgba(200,200,200,1) 0 4px 18px;
+	box-shadow: rgba(200,200,200,1) 0 4px 18px;
+}
+#login_div fieldset {
+	border: none;
+    padding: 10px;
+}
+#login_div legend {
+  padding: 0 2px;
+  font-weight: bold;
+}
+
+#login_div label {
+    width: 200px;
+    text-align: left;
+    color: #00a100;
+}
+#login_div .textfield{
+    font-size: 24px;
+    border: 1px solid #b9c4db;
+    background: #f1f1f1;
+    width: 300px;
+}
+
+#login_footer{
+    margin: 20px auto 0 auto;
+    width: 360px;
+    color: #aaaaaa;
+    text-align: center;
+}
+.note{
+    font-size: 12px;
+}

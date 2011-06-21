@@ -1,0 +1,127 @@
+MAP
+    NAME Cesar 
+    STATUS ON
+    SIZE 400 500
+    #EXTENT 538911 848622 837195 1201881 
+    #UNITS meters
+    EXTENT -74.1457 7.67725 -72.878 10.8697 
+    UNITS dd
+    SHAPEPATH "./"
+    IMAGECOLOR 255 255 255
+    FONTSET "fonts/fontset.txt"
+    IMAGETYPE PNG24
+    WEB
+      IMAGEPATH "/var/www/tmp/"
+      METADATA
+        "wms_title"     "WMS SIDCE"  ##required
+        "wms_onlineresource" "http://190.144.128.6/cgi-bin/cesar"   ##required
+        "wms_srs"       "epsg:4326 epsg:900913"  ##recommended
+      END
+    END
+
+    PROJECTION
+        "init=epsg:4326"
+    END
+
+    SYMBOL
+        NAME 'circle'
+        TYPE ELLIPSE
+        POINTS 1 1 END
+        FILLED TRUE
+    END
+
+    LEGEND
+        IMAGECOLOR 240 240 240
+        LABEL
+            COLOR  50 50 50
+            OUTLINECOLOR 255 255 255
+            FONT "label"
+            TYPE truetype
+            SIZE 6
+            POSITION AUTO
+            PARTIALS FALSE
+        END
+        #STATUS EMBED
+        STATUS OFF
+        POSITION lr
+    END
+
+    LAYER
+        NAME "INLINE"
+        TYPE POINT
+        STATUS ON
+     END #layer
+
+    LAYER
+      NAME "depto"
+      METADATA
+        "wms_title"    "Departamentos"   ##required
+      END
+      TYPE POLYGON
+      STATUS Off
+      DATA "depto_dd.shp"
+      CLASSITEM "Name"
+      PROJECTION
+        "init=epsg:4326"   ##recommended
+      END
+    CLASS
+        EXPRESSION "Cesar"
+        STYLE
+            COLOR 255 255 255
+        END
+    END
+      CLASS
+        STYLE
+          COLOR 249 249 249
+          OUTLINECOLOR 206 207 204
+        END
+      END
+    END # Layer
+    
+    SYMBOL
+        NAME 'dashed'
+        TYPE ELLIPSE
+        POINTS
+            1 1
+        END
+        PATTERN
+            4 8 4 8            #alternate four circles, then 8 spaces
+        END
+    END
+
+    LAYER
+      NAME "MPIO"  ##Uppercase to allow change it from openlayers
+      METADATA
+        "wms_title"    "Municipios"  ##required
+      END
+      TYPE POLYGON
+      STATUS ON
+      DATA "municipios_cesar_dd.shp"
+      LABELITEM "eng_name"  # Field with short name
+      #TRANSPARENCY ALPHA
+      #OPACITY 70
+      PROJECTION
+        "init=epsg:4326"   ##recommended
+      END
+      CLASS
+        STYLE
+          OUTLINECOLOR 220 220 220
+          COLOR 164 150 184
+          #SYMBOL 'dashed'
+          #WIDTH 1
+          #COLOR 0 0 0
+          ANTIALIAS TRUE
+        END
+        LABEL
+          COLOR  0 0 0
+          OUTLINECOLOR 255 255 255
+          TYPE truetype
+          FONT 'verdana'
+          SIZE 5
+          POSITION AUTO
+          PARTIALS FALSE
+          ANTIALIAS true
+        END
+      END
+    END # Layer
+END
